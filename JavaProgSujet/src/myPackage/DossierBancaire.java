@@ -3,18 +3,18 @@ package myPackage;
 public class DossierBancaire {
 
 	public static double taux = 3.2/100;
-	public static double pourcentage_compte_epargne = 0.6; // Taux à verser sur le Compte Epargne
-	public static double pourcentage_compte_courant = 1 - pourcentage_compte_epargne; // Taux à verser sur le Compte Courant
+	public static double pourcentage_compte_epargne = 0.6; // Taux ï¿½ verser sur le Compte Epargne
+	public static double pourcentage_compte_courant = 1 - pourcentage_compte_epargne; // Taux ï¿½ verser sur le Compte Courant
 
-	private CompteCourant Compte_Courant;
+	private CompteCourant Compte_Courant; 
 	private CompteEpargne Compte_Epargne;
 
 	public DossierBancaire() {
-		Compte_Courant = new CompteCourant(0.0);
-		Compte_Epargne = new CompteEpargne(0.0);
+		Compte_Courant = new CompteCourant(0.0);//nouveau compte courant
+		Compte_Epargne = new CompteEpargne(0.0);//nouveau compte epargne
 	}
 
-	public DossierBancaire(double val) { // Versement initial si il y a de l'argent lors de la création du dossier bancaire
+	public DossierBancaire(double val) { // Versement initial si il y a de l'argent lors de la crï¿½ation du dossier bancaire
 		Compte_Courant = new CompteCourant(val * pourcentage_compte_courant);
 		Compte_Epargne = new CompteEpargne(val * pourcentage_compte_epargne);
 	}
