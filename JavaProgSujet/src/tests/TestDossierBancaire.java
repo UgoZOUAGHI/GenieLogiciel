@@ -35,4 +35,20 @@ public class TestDossierBancaire {
 		compteE.add(100);
 		assertEquals(100,compteE.getSolde(),0);
 	}
+	@Test
+	public void test1_4() throws Exception//retrait
+	{
+		DossierBancaire Db= new DossierBancaire();
+		assertEquals(0,Db.getSolde(),0); 
+		Db.deposer(100);
+		assertEquals(100,Db.getSolde(),0);
+		Db.retirer(20);
+		assertEquals(80,Db.getSolde(),0);
+		try {
+			Db.retirer(600); // Exception vérifiée ! 
+			fail("Possible de retirer plus que la normale");
+		}catch(Exception e) {}
+		
+	}
+	
 }

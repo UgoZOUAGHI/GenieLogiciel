@@ -45,7 +45,7 @@ public class DossierBancaire {
 	}
 	
 	public void retirer(double val) throws Exception {//retirer argent
-		if(this.getSolde() - val < 0) throw new Exception("T'es pauvre mon gars !");
+		if(this.getSolde_CompteCourant() - val < 0) throw new Exception("T'es pauvre mon gars !");
 		else Compte_Courant.add(-val);
 	}
 }
