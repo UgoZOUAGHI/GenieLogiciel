@@ -37,11 +37,11 @@ public class DossierBancaire {
 		return Compte_Epargne.getSolde();
 	}
 
-	public void remunerer() {
+	public void remunerer() {//ajout sur le compte epargne
 		Compte_Epargne.add(Compte_Epargne.getSolde() * taux);								
 	}
 	
-	public void retirer(double val) throws Exception {
+	public void retirer(double val) throws Exception {//retirer argent
 		if(this.getSolde() - val < 0) throw new Exception("T'es pauvre mon gars !");
 		else Compte_Courant.add(-val);
 	}
