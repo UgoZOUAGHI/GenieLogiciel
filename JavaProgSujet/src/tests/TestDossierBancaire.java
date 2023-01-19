@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import myPackage.DossierBancaire;
 import myPackage.CompteCourant;
+import myPackage.CompteEpargne;
 
 public class TestDossierBancaire {
 
@@ -26,5 +27,12 @@ public class TestDossierBancaire {
 		compteC.add(100);
 		assertEquals(100,compteC.getSolde(),0);
 	}
-
+	
+	@Test
+	public void test1_3() {
+		CompteEpargne compteE=new CompteEpargne(0);
+		assertEquals(0,compteE.getSolde(),0); 
+		compteE.add(100);
+		assertEquals(100,compteE.getSolde(),0);
+	}
 }

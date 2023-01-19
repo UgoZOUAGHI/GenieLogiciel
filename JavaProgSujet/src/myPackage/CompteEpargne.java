@@ -9,5 +9,8 @@ public class CompteEpargne extends Compte {
 	public void add(double value) {
 		super.setSolde(super.getSolde() + value);
 	}
-
+	
+	public double getSolde() {
+		return super.getSolde();
+	}
 }
