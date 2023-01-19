@@ -3,18 +3,19 @@ package myPackage;
 public class DossierBancaire {
 
 	public static double taux = 3.2/100;
-	public static double pourcentage_compte_epargne = 0.6; // Taux à verser sur le Compte Epargne
-	public static double pourcentage_compte_courant = 1 - pourcentage_compte_epargne; // Taux à verser sur le Compte Courant
+	public static double pourcentage_compte_epargne = 0.6; // Taux ï¿½ verser sur le Compte Epargne
+	public static double pourcentage_compte_courant = 1 - pourcentage_compte_epargne; // Taux ï¿½ verser sur le Compte Courant
 
 	private CompteCourant Compte_Courant;
 	private CompteEpargne Compte_Epargne;
 
-	public DossierBancaire() {
+	public DossierBancaire() //constructeur sans solde initial
+	{
 		Compte_Courant = new CompteCourant(0.0);
 		Compte_Epargne = new CompteEpargne(0.0);
 	}
 
-	public DossierBancaire(double val) { // Versement initial si il y a de l'argent lors de la création du dossier bancaire
+	public DossierBancaire(double val) { // Versement initial si il y a de l'argent lors de la crï¿½ation du dossier bancaire
 		Compte_Courant = new CompteCourant(val * pourcentage_compte_courant);
 		Compte_Epargne = new CompteEpargne(val * pourcentage_compte_epargne);
 	}
@@ -24,15 +25,15 @@ public class DossierBancaire {
 		Compte_Epargne.add(value * pourcentage_compte_epargne);
 	}
 
-	public double getSolde() {	
+	public double getSolde() {	// obtenir le solde total du dossier bancaire
 		return Compte_Courant.getSolde() + Compte_Epargne.getSolde();
 	}
 
-	public double getSolde_CompteCourant() {
+	public double getSolde_CompteCourant() {// obtenir le solde du compte courant
 		return Compte_Courant.getSolde();
 	}
 
-	public double getSolde_CompteEpargne() {
+	public double getSolde_CompteEpargne() {// obtenir le solde du compte epargne
 		return Compte_Epargne.getSolde();
 	}
 
